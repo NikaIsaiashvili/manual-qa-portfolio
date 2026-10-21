@@ -10,7 +10,17 @@ All projects here are **practical QA assignments or independent practice**. They
 |---|---|---|
 | **[Mini Remittance: Money Transfer Application Testing](01-mini-remittance/README.md)**<br>Practical assignment · Sep 2026 | Exploratory and negative testing of a money transfer console; defect report and module-level acceptance assessment | 23 reported defects (13 Major, 10 Minor), 5 of them pending requirement clarification; release **not accepted** |
 | **[Online Ordering Web Application: Defect Validation](02-online-ordering/README.md)**<br>Practical assignment · 2026 | Retested 10 resolved Jira issues in a new build and recommended an action for each | 3 fixes confirmed, 1 fix failed (reopen), 1 test blocked |
-| **[API and SQL Practice](03-api-and-sql-practice/README.md)**<br>Ongoing practice | Independent API and SQL practice; exercises for publishing are planned | No published results yet |
+| **[Additional QA practice](https://github.com/NikaIsaiashvili/qa-practice-portfolio)**<br>Separate repository · in progress | Manual test cases, a Postman API collection, and SQL validation queries | Work in progress; see below |
+
+## Additional QA practice
+
+Independent practice on public practice systems and synthetic data is in a separate repository: **[qa-practice-portfolio](https://github.com/NikaIsaiashvili/qa-practice-portfolio)**.
+
+- **Manual test cases:** 33 test cases and 2 decision tables for the SauceDemo store. Not executed yet.
+- **REST API testing:** a Postman collection with 17 requests for the Restful-Booker practice API. 11 requests were run by an AI agent to validate the collection; my own run is pending.
+- **SQL validation:** 14 queries on a synthetic SQLite dataset. Executed by an AI agent; my own run is pending.
+
+Those materials were prepared with AI assistance, and the results there are labeled by who executed them. The testing in the two assignment projects above was done by me; the documents here are edited Markdown versions of my original reports.
 
 ## Best examples
 
@@ -37,7 +47,8 @@ All projects here are **practical QA assignments or independent practice**. They
 - Defect validation against Jira resolutions (Fixed, Won't Fix, Cannot Reproduce, FAD (Works as Designed))
 
 - **Tools used in these projects:** Jira, Google Chrome
-- **Also practiced (no published work yet):** Postman, Swagger, SQL, Chrome DevTools, TestRail, Zephyr
+- **Practice materials:** Postman and SQL (see [qa-practice-portfolio](https://github.com/NikaIsaiashvili/qa-practice-portfolio))
+- **Also practiced:** Swagger, Chrome DevTools, TestRail, Zephyr
 
 ## Background
 
