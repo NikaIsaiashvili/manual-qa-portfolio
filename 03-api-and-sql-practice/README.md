@@ -2,7 +2,7 @@
 
 [← Back to portfolio](../README.md)
 
-**Status: planned.** This folder does not contain completed work yet.
+**Status: planned.** This folder does not contain completed work yet. It corresponds to "Independent QA and Technical Practice" on my CV and LinkedIn.
 
 I have practiced REST API testing with Postman and Swagger, and SQL queries (SELECT, JOIN, GROUP BY) for data checks. That practice was not saved as files I can publish, so this section shows the plan for new exercises. Results will be added here only after I complete them.
 
