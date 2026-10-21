@@ -4,9 +4,9 @@
 
 **Build tested:** 2.0 · **Test type:** Defect validation (DV) · **Tester:** Nika Isaiashvili · **Year:** 2026
 
-The original records were in a PDF document with links to the Jira tickets. This Markdown version keeps the validation steps and results, with light editing for grammar. Jira links, ticket IDs, the application URL, and the names of training staff were removed. Each issue's resolution comes from the Jira ticket screenshot in the original document.
+The original records were in a PDF document with links to the Jira tickets. This Markdown version keeps the validation steps and results, with light editing for grammar. Jira links, ticket IDs, the application URL, and the names of training staff were removed. Each issue's resolution comes from the Jira ticket screenshot in the original document. Evidence in the original records was a reference to the Jira ticket (one record had none).
 
-**Not a Bug (FAD)** is the resolution used in the tickets for issues closed as "not a defect".
+**FAD** is the resolution shown in the tickets for issues closed as working as designed (described in the records as "not a bug").
 
 ## Decision rules
 
@@ -18,21 +18,21 @@ Each issue already had a resolution in Jira. The goal of validation was to check
 | **Won't Fix** | The behavior is still present and the Won't Fix decision still applies | Decision confirmed | Escalate for reconsideration |
 | **Cannot Reproduce** | Following the original steps gives the expected result | Cannot Reproduce confirmed | Reopen with new evidence |
 | Duplicate | The same defect already exists | Duplicate confirmed | Reopen as a unique defect |
-| **Not a Bug (FAD)** | The described behavior is correct by design | Behavior confirmed as designed | Reopen as a valid defect |
+| **Works as Designed (FAD)** | The described behavior is correct by design | Behavior confirmed as designed | Reopen as a valid defect |
 | Fixed indirectly | Fixed as a side effect of another change | Indirect fix confirmed | Reopen the defect |
 
 ## Results summary
 
 | # | Issue | Resolution | DV result | Defect action |
 |---|---|---|---|---|
-| [1](#dv-1) | Website is accessible over unsecured HTTP instead of HTTPS | Not a Bug (FAD) | PASS | Close (decision confirmed) |
+| [1](#dv-1) | Website is accessible over unsecured HTTP instead of HTTPS | FAD (Works as Designed) | PASS | Close (decision confirmed) |
 | [2](#dv-2) | Pizza size options are not selectable | Fixed | **FAIL** | **Reopen** |
-| [3](#dv-3) | Classic Chicken Shawarma image is not animated | Not a Bug (FAD) | PASS | Close (PM confirmation required) |
+| [3](#dv-3) | Classic Chicken Shawarma image is not animated | FAD (Works as Designed) | PASS | Close (PM confirmation required) |
 | [4](#dv-4) | Weight Loss Calculator uses a 1414 kcal deficit instead of 1000 kcal | Fixed | PASS | Close (remains resolved) |
 | [5](#dv-5) | Beef Noodles displays a burger image | Won't Fix | PASS | Close (remains resolved) |
 | [6](#dv-6) | Garlic Aioli product image is missing | Cannot Reproduce | **BLOCKED** | Do not close |
-| [7](#dv-7) | Original price is not displayed for discounted combos | Won't Fix | PASS (conditional) | Close, if the PM confirms Won't Fix |
-| [8](#dv-8) | Combo menu items are missing the calorie badge | Not a Bug (FAD) | PASS | Close (remains resolved) |
+| [7](#dv-7) | Original price is not displayed for discounted combos | Won't Fix | PASS (conditional) | Close (remains resolved) |
+| [8](#dv-8) | Combo menu items are missing the calorie badge | FAD (Works as Designed) | PASS | Close (remains resolved) |
 | [9](#dv-9) | About Us footer is missing | Fixed | PASS | Close (remains resolved) |
 | [10](#dv-10) | Cart item count is not centered in the badge | Fixed | PASS | Close (remains resolved) |
 
@@ -43,7 +43,7 @@ Each issue already had a resolution in Jira. The goal of validation was to check
 <a id="dv-1"></a>
 ## 1. [Security] Website is accessible over unsecured HTTP instead of HTTPS
 
-**Resolution:** Not a Bug (FAD). The training center decided that the current behavior is not a defect, and the ticket was closed.
+**Resolution:** FAD (Works as Designed). The training center decided that the current behavior is not a defect, and the ticket was closed.
 
 **Validation steps**
 1. Open the website using the `http://` protocol.
@@ -85,7 +85,7 @@ Each issue already had a resolution in Jira. The goal of validation was to check
 <a id="dv-3"></a>
 ## 3. [Menu] Classic Chicken Shawarma card image is not animated in the Shawarma section
 
-**Resolution:** Not a Bug (FAD)
+**Resolution:** FAD (Works as Designed)
 
 **Validation steps**
 1. Open the website.
@@ -99,7 +99,7 @@ Each issue already had a resolution in Jira. The goal of validation was to check
 
 **Actual result:** The Classic Chicken Shawarma image is static, and the other shawarma cards are animated. The behavior matches the original ticket.
 
-**DV result:** PASS · **Defect action:** Close (PM confirmation required).
+**DV result:** PASS · **Defect action:** Close (PM confirmation required). Note: the original record marks this as PASS even though closing still depends on PM confirmation.
 
 ---
 
@@ -148,7 +148,7 @@ Both deficits match the expected 1000 kcal.
 
 **Actual result:** The Beef Noodles card still shows a burger image instead of a Beef Noodles image. The original issue is still reproducible in build 2.0.
 
-**DV result:** PASS · **Defect action:** Close (remains resolved as Won't Fix).
+**DV result:** PASS · **Defect action:** Close (remains resolved as Won't Fix). No rationale for the decision was recorded in the ticket.
 
 ---
 
@@ -168,7 +168,7 @@ Both deficits match the expected 1000 kcal.
 
 **Actual result:** The Sauces section redirects to a 404 Not Found page. The Garlic Aioli card cannot be reached, so the original issue cannot be validated.
 
-**DV result:** BLOCKED / NOT TESTABLE · **Defect action:** Do not close based on this result. Recommendation: retest after the Sauces section is available.
+**DV result:** BLOCKED (not testable) · **Defect action:** Do not close based on this result. Recommendations: retest after the Sauces section is available, and log the Sauces 404 error as a new defect.
 
 ---
 
@@ -196,7 +196,7 @@ Both deficits match the expected 1000 kcal.
 <a id="dv-8"></a>
 ## 8. [Menu] Combo menu items are missing the calorie badge
 
-**Resolution:** Not a Bug (FAD)
+**Resolution:** FAD (Works as Designed)
 
 **Validation steps**
 1. Open the website.
@@ -204,13 +204,13 @@ Both deficits match the expected 1000 kcal.
 3. Compare the combo item cards with other menu item cards.
 4. Check whether calorie badges are shown on combo items.
 5. Compare with the original description in the ticket.
-6. Check the ticket for the reason it was marked Not a Bug.
+6. Check the ticket for the reason it was resolved as FAD.
 
 **Expected result:** The behavior matches the product design: combo items without calorie badges are intentional.
 
-**Actual result:** Combo items do not show calorie badges, which matches the documented product decision.
+**Actual result:** Combo items do not show calorie badges, which matches the FAD resolution in the ticket. No rationale was recorded in the ticket.
 
-**DV result:** PASS · **Defect action:** Close (remains resolved). The Not a Bug resolution is confirmed.
+**DV result:** PASS · **Defect action:** Close (remains resolved). The FAD resolution is confirmed.
 
 ---
 
