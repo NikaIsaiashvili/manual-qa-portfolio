@@ -29,14 +29,14 @@ This document records the acceptance status of each application module and the o
 | Send (MoneyGram) | **Fail** | [#2](defect-report.md#bug-2) | Send or Receive Money from MoneyGram opens the Western Union window, so the MoneyGram flow cannot be tested or accepted. |
 | Sender / Receiver Form Validation & UI | **Fail** | [#3](defect-report.md#bug-3), [#4](defect-report.md#bug-4), [#5](defect-report.md#bug-5), [#6](defect-report.md#bug-6), [#8](defect-report.md#bug-8), [#16](defect-report.md#bug-16) | Document Number accepts any input, and Amount accepts very large values (both Major). Name and Surname accept digits and symbols and have no length limit; Phone accepts non-numeric characters; field hints are swapped (Minor). |
 | Fee & Total Calculation | **Fail** | [#9](defect-report.md#bug-9) | The fee at confirmation differs from the calculator. For an amount of 1, the minimum fee of 2.00 is not applied (0.02 USD/EUR and 0.01 GEL charged instead). |
-| Balance, Cards & Settings | **Fail** | [#17](defect-report.md#bug-17), [#18](defect-report.md#bug-18), [#19](defect-report.md#bug-19), [#20](defect-report.md#bug-20) | No user balance, no balance check before payment, no card management or top-up, and no Settings for the account. |
+| Balance, Cards & Settings | **Fail** | [#17](defect-report.md#bug-17), [#18](defect-report.md#bug-18), [#19](defect-report.md#bug-19), [#20](defect-report.md#bug-20) | No user balance, no balance check before payment, no card management or top-up, and no Settings for the account. These features need requirement clarification (see the note below). |
 | Transfers List & Filters | **Fail** | [#11](defect-report.md#bug-11), [#12](defect-report.md#bug-12), [#21](defect-report.md#bug-21) | Clear Data deletes all history without confirmation (Major). The date filter time cannot be changed, and the From/To calendars overlap (Minor). |
 | Receipts / PDF Output | Pass with notes | [#7](defect-report.md#bug-7), [#14](defect-report.md#bug-14) | A PDF is generated for each transfer, but Phone and Document Number are missing, and Georgian characters appear as encoded symbols (both Minor). |
 | Corridors & Currency Matrix | **Fail** | [#22](defect-report.md#bug-22) (also [#9](defect-report.md#bug-9)) | Continue to AML check does not respond when Somalia is the destination (Major). The fee inconsistency also appears across USD, EUR, and GEL (see #9). |
 | AML Watchlist | Pass | None | Tested; behaves as expected. No defects. |
-| Receive & Verify Receiver | Pass | None | Tested; behaves as expected. No defects. |
+| Receive & Verify Receiver | Pass | None | Tested; behaves as expected. No defects. Note: MoneyGram Receive is affected by #2. |
 | Transfer Status Lifecycle | Pass | None | Tested; behaves as expected. No defects. |
-| Data Persistence | Not confirmed | None | No defects for this module. Execution status still needs to be confirmed. |
+| Data Persistence | Not confirmed | None | No defects for this module, apart from Clear Data (#21), which is recorded under Transfers List & Filters. Execution status still needs to be confirmed. |
 
 **Modules:** 13 in total: 3 Pass, 7 Fail, 2 Pass with notes, 1 Not confirmed.
 
@@ -63,6 +63,8 @@ The defect report contains 23 open defects, 13 of them Major. Several affect the
 - no balance exists or is checked before payment ([#17](defect-report.md#bug-17), [#18](defect-report.md#bug-18)).
 
 MoneyGram cannot be accepted because its Send/Receive actions open the Western Union window ([#2](defect-report.md#bug-2)), and Clear Data removes all history without confirmation ([#21](defect-report.md#bug-21)).
+
+> **Note added for this portfolio:** #13 and #17–#20 depend on requirements that were not documented, and need clarification before they are treated as confirmed defects. The recommendation stands without them: the directly observed Major defects (#2, #8, #9, #10, #15, #16, #21, #22) are enough to block release.
 
 ## Recommended next steps
 

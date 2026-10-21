@@ -228,7 +228,7 @@ This report lists all 23 defects logged during manual testing of the Mini Remitt
 1. Open the Send Money flow.
 2. Select a transfer currency.
 3. Enter `1` as the transfer amount.
-4. Check the fee shown by the calculator. The calculator label reads *Fee (1.5%, minimum 2.00)* *(from screenshot)*.
+4. Check the fee shown by the calculator. The calculator label reads *Fee (1.5%, minimum 2.00)* *(from screenshots of the same form)*.
 5. Continue to the confirmation step.
 6. Check the fee and total charge before confirming.
 7. Repeat with the other available currencies.
@@ -260,7 +260,7 @@ This report lists all 23 defects logged during manual testing of the Mini Remitt
 
 **Expected result:** The same Transfer Number is shown after confirmation and in the notification.
 
-**Actual result:** The notification shows a different Transfer Number from the one shown after confirmation.
+**Actual result:** The notification shows a different Transfer Number from the one shown after confirmation. The confirmation screen tells the operator to give this number to the sender because the receiver needs it to collect the money *(from screenshot)*.
 
 ---
 
@@ -292,7 +292,7 @@ This report lists all 23 defects logged during manual testing of the Mini Remitt
 **Severity:** Minor
 
 **Preconditions**
-- The user is on the Transfers search/filter section.
+- The user is on the Transfer History filter section.
 
 **Steps to reproduce**
 1. Open the **From** calendar.
@@ -392,7 +392,7 @@ This report lists all 23 defects logged during manual testing of the Mini Remitt
 
 **Expected result:** The Amount field enforces a maximum amount and blocks the transfer when the amount is above the limit.
 
-**Actual result:** The amount is accepted, shown in scientific notation (for example `7e+85`), and the transfer is completed.
+**Actual result:** The amount is accepted, shown in scientific notation, and the transfer is completed. The original report summarizes the displayed value as "7e+85". The screenshot shows Amount `6.666666666666667e+85 USD` and Fee `1e+84 USD`, so the value entered in that run was longer than the example above *(from screenshot)*.
 
 ---
 
@@ -529,7 +529,7 @@ This report lists all 23 defects logged during manual testing of the Mini Remitt
 - Send Money functionality is available.
 
 **Steps to reproduce**
-1. Click **Send**.
+1. Open the Send Money flow (Western Union).
 2. Fill in all required fields.
 3. Click **Continue to AML check**.
 4. Observe the confirmation modal.
